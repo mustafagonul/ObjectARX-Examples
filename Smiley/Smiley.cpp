@@ -1,11 +1,14 @@
 #include <aced.h>
 #include <arxHeaders.h>
 
+// macros
+#define szRDS _RXST("TARX")
+
 
 // declations
-class HelloWorldApp : public AcRxArxApp {
+class SmileyApp : public AcRxArxApp {
 public:
-  HelloWorldApp();
+  SmileyApp();
 
 public:
   virtual AcRx::AppRetCode On_kInitAppMsg(void *pkt);
@@ -13,38 +16,37 @@ public:
   virtual void RegisterServerComponents();
 
 public:
-  static void HelloWorld_Hello();
+  static void Smiley_smile();
 };
 
 // definitions
-HelloWorldApp::HelloWorldApp()
+SmileyApp::SmileyApp()
   : AcRxArxApp()
 {
 }
 
-AcRx::AppRetCode HelloWorldApp::On_kInitAppMsg(void *pkt)
+AcRx::AppRetCode SmileyApp::On_kInitAppMsg(void *pkt)
 {
   auto retCode = AcRxArxApp::On_kInitAppMsg(pkt);
 
   return retCode;
 }
 
-AcRx::AppRetCode HelloWorldApp::On_kUnloadAppMsg(void *pkt)
+AcRx::AppRetCode SmileyApp::On_kUnloadAppMsg(void *pkt)
 {
   auto retCode = AcRxArxApp::On_kUnloadAppMsg(pkt);
 
   return retCode;
 }
 
-void HelloWorldApp::RegisterServerComponents()
+void SmileyApp::RegisterServerComponents()
 {
 }
 
-void HelloWorldApp::HelloWorld_Hello()
+void SmileyApp::Smiley_smile()
 {
-  acutPrintf(_T("Hello World App!\n"));
 }
 
 //-----------------------------------------------------------------------------
-IMPLEMENT_ARX_ENTRYPOINT(HelloWorldApp)
-ACED_ARXCOMMAND_ENTRY_AUTO(HelloWorldApp, HelloWorld, _Hello, Hello, ACRX_CMD_TRANSPARENT, NULL)
+IMPLEMENT_ARX_ENTRYPOINT(SmileyApp)
+ACED_ARXCOMMAND_ENTRY_AUTO(SmileyApp, Smiley, _smile, smile, ACRX_CMD_TRANSPARENT, NULL)
