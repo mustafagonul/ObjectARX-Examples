@@ -1,3 +1,5 @@
+#include <windows.h>
+#include <tchar.h>
 #include <aced.h>
 #include <arxHeaders.h>
 

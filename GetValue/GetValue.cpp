@@ -1,3 +1,5 @@
+#include <windows.h>
+#include <tchar.h>
 #include <aced.h>
 #include <arxHeaders.h>
 
@@ -46,7 +48,7 @@ void GetValueApp::GetValue_GetString()
 
   ACHAR buffer[buffersize + 1] = {0};
 
-  acedGetStringB(false, _T("Enter some string: "), buffer, buffersize);
+  acedGetString(false, _T("Enter some string: "), buffer, buffersize);
 
   acutPrintf(_T("\n"));
   acutPrintf(buffer);

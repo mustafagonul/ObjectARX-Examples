@@ -1,7 +1,8 @@
 // HelloWorld.cpp : Defines the exported functions for the DLL application.
 //
 
-#include "tchar.h"
+#include <windows.h>
+#include <tchar.h>
 #include <aced.h>
 #include <rxregsvc.h>
 
